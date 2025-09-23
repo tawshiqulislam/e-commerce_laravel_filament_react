@@ -93,7 +93,7 @@ const Footer = () => {
                 <Suscribe />
             </div> */}
 
-            <footer className="pt-content bg-[#BAEBFF]">
+            <footer className="pt-content">
                 <div className="border-t bg-[#BAEBFF]">
                     <div className="container text-sm ">
                         <div className="py-8 md:py-10 lg:py-12 xl:py-14 grid grid-cols-4 gap-8">

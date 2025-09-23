@@ -6,9 +6,13 @@ import MobileNavbar from "./MobileNavbar";
 
 export default function Navbar({ auth }) {
     const navigation = [
+        // {
+        //     name: "Discount",
+        //     href: "offers",
+        // },
         {
-            name: "Discount",
-            href: "offers",
+            name: "Products",
+            href: "search",
         },
         {
             name: "Blog",

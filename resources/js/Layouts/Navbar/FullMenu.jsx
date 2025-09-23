@@ -66,15 +66,6 @@ export default function FullMenu({ navigation, departments }) {
                                     department={department}
                                 />
                             ))}
-                            {navigation.map((item, key) => (
-                                <LinkNavbar
-                                    key={key}
-                                    href={route(item.href)}
-                                    active={route().current(item.href)}
-                                >
-                                    {item.name}
-                                </LinkNavbar>
-                            ))}
                         </div>
                     </Disclosure.Panel>
                 </>
