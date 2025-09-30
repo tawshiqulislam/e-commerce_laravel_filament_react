@@ -139,7 +139,7 @@ const Footer = () => {
                             </ItemFooter>
                         </div>
                     </div>
-                    <hr className="border-t-2 border-orange-500 my-1" style={{ backgroundColor: "#ffa600ff" }} />
+                    {/* <hr className="border-t-2 border-orange-500 my-1" style={{ backgroundColor: "#ffa600ff" }} /> */}
                     <div className="py-4 text-xs bg-[#00BBAE]">
                         <div className="container flex items-center justify-between text-neutral-100 ">
                             <p>

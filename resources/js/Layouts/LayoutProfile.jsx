@@ -41,11 +41,6 @@ export default function Profile({ title, children, breadcrumb = [] }) {
             Icon: IdentificationIcon,
         },
         {
-            title: "Delivery Addresses",
-            path: "profile.addresses.index",
-            Icon: MapPinIcon,
-        },
-        {
             title: "Review",
             path: "profile.review",
             Icon: StarIcon,

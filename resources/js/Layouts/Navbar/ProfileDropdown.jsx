@@ -66,7 +66,7 @@ export default function ProfileDropdown({ children }) {
                             {navigation_profile.map((item) => (
                                 <Dropdown.Link href={item.href} key={item.name}>
                                     <div className="flex items-center">
-                                        <item.icon className="h-5 w-5 mr-2 text-primary-600" />
+                                        <item.icon className="h-5 w-5 mr-2 text-orange-600" />
                                         <span>{item.name}</span>
                                     </div>
                                 </Dropdown.Link>

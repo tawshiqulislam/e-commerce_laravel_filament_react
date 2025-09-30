@@ -44,20 +44,41 @@ export default function DesktopNavbar({ navigation }) {
 
                     {/* Right: Login + Register */}
                     <div className="flex items-center space-x-4">
-                        <a
-                            href="/login"
-                            className="flex items-center space-x-1 hover:underline"
-                        >
-                            <FaUser />
-                            <span>Login</span>
-                        </a>
-                        <a
-                            href="/register"
-                            className="flex items-center space-x-1 hover:underline"
-                        >
-                            <FaUser />
-                            <span>Register</span>
-                        </a>
+                        <div>
+                            {auth.user ? (
+                                <ProfileDropdown>
+                                    <button className="inline-flex items-center">
+                                        {Boolean(auth.user.verified) && (
+                                            <img
+                                                src={verifiedIcon}
+                                                className="w-5 h-5 mr-1"
+                                            />
+                                        )}
+                                        {auth.user.name}
+                                        <ChevronUpDownIcon
+                                            className="w-5 h-5 ml-1 -mr-1"
+                                            aria-hidden="true"
+                                        />
+                                    </button>
+                                </ProfileDropdown>
+                            ) : (
+                                <div className="flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-2">
+                                    <Link href={route("login")} className="hover:">
+                                        Login
+                                    </Link>
+                                    <span
+                                        className="h-4 w-px bg-neutral-400"
+                                        aria-hidden="true"
+                                    ></span>
+                                    <Link
+                                        href={route("register")}
+                                        className="hover:"
+                                    >
+                                        Register
+                                    </Link>
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>
