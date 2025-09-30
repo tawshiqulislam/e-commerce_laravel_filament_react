@@ -4,7 +4,10 @@ import { ChevronUpDownIcon } from "@heroicons/react/24/outline";
 import ApplicationLogo from "@/Components/ApplicationLogo";
 import ProfileDropdown from "./ProfileDropdown";
 import FullMenu from "./FullMenu";
+import SearchBar from "./SearchBar";
 import verifiedIcon from "../../../../public/img/icons/verified.png";
+import { FaLocationDot, FaEnvelope, FaPhone, FaUser } from "react-icons/fa6";
+import { GiBeachBag } from "react-icons/gi";
 
 export default function DesktopNavbar({ navigation }) {
     const { auth, filters, departments, settings } = usePage().props;
@@ -18,28 +21,98 @@ export default function DesktopNavbar({ navigation }) {
     }
 
     return (
-        <nav className="border-b hidden lg:block bg-[#BAEBFF]">
+        <nav className="border-b hidden lg:block bg-[#FFFFFF]">
             {/* Top info bar */}
-            <div className="bg-[#06A096] text-neutral-100 text-sm">
-                <div className="container flex justify-between py-1">
-                    <div>
-                        {/* use bootstrap icons for location and email */}
-                        <span> <i className="fas fa-location-dot"></i> {settings?.address || "123 Example Street, Dhaka"}</span>
-                        <span className="mx-2">|</span>
-                        <span> <i className="fas fa-envelope"></i> {settings?.email || "gmail@example.com"}</span>
+            <div className="bg-[#06A096] text-neutral-100 text-sm py-2">
+                <div className="container flex justify-between items-center">
+                    {/* Left: Address + Email */}
+                    <div className="flex items-center space-x-4">
+                        <span className="flex items-center space-x-1">
+                            <FaLocationDot />
+                            <span>
+                                {settings?.company?.address ||
+                                    "123 Example Street, Dhaka"}
+                            </span>
+                        </span>
+                        <span className="flex items-center space-x-1">
+                            <FaEnvelope />
+                            <span>
+                                {settings?.company?.email || "gmail@example.com"}
+                            </span>
+                        </span>
                     </div>
-                    <span>{settings?.phone || "+880 1234-567890"}</span>
+
+                    {/* Right: Login + Register */}
+                    <div className="flex items-center space-x-4">
+                        <a
+                            href="/login"
+                            className="flex items-center space-x-1 hover:underline"
+                        >
+                            <FaUser />
+                            <span>Login</span>
+                        </a>
+                        <a
+                            href="/register"
+                            className="flex items-center space-x-1 hover:underline"
+                        >
+                            <FaUser />
+                            <span>Register</span>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <div className="container text-neutral-700 text-sm">
+            <div className="bg-[#00BBAE] text-neutral-100 text-sm">
+                <div className="container flex items-center justify-between py-3">
+                    {/* Left: Big Logo */}
+                    <div className="flex-shrink-0">
+                        <ApplicationLogo className="w-36 h-auto" />
+                    </div>
+
+                    {/* Middle: Category + Search capsule */}
+                    <div className="flex flex-1 justify-center space-x-4">
+                        {/* Capsule: Category + Search */}
+                        <div className="flex items-center bg-white rounded-full shadow-md w-full max-w-2xl relative">
+                            {/* Category dropdown */}
+                            <div className="flex-shrink-0 px-4 text-black border-r border-gray-300">
+                                <FullMenu departments={departments} />
+                            </div>
+                            {/* Search input */}
+                            <div className="flex-1">
+                                <SearchBar />
+                            </div>
+                        </div>
+
+                        {/* Capsule: Phone Call */}
+                        <div className="flex items-center space-x-2 bg-white rounded-full shadow-md px-5 py-2 text-black hover:bg-orange-400">
+                            <div className="col">
+                                <FaPhone className="text-xl"/>
+                            </div>
+                            <div className="col">
+                                <div className="text-xs">24/7 Support</div> 
+                                <a href={`tel:${settings?.phone || "+8801973200783"}`} className="font-semibold">
+                                    {settings?.phone || "(+88) 0197-3200783"}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Right: Cart */}
+                    <div className="flex-shrink-0">
+                        <a
+                            className="text-4xl hover:text-orange-400"
+                            href="/shopping-cart"
+                            target="_blank"
+                        >
+                            <GiBeachBag />
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div className="container text-neutral-700 text-lg py-4">
                 <div className="flex items-center justify-between">
                     {/* Left side: Menu + Logo */}
-                    <div className="col-span-3 flex flex-row space-x-2">
-                        {/* Pass only departments to FullMenu */}
-                        <FullMenu departments={departments} />
-                        <ApplicationLogo />
-                    </div>
 
                     {/* Right side: Navigation + Auth */}
                     <div className="flex items-center space-x-4">
@@ -48,40 +121,12 @@ export default function DesktopNavbar({ navigation }) {
                             <Link
                                 key={key}
                                 href={route(item.href)}
-                                className="hover:text-primary transition-colors"
+                                className="hover:text-orange-400 transition-colors"
                             >
                                 {item.name}
                             </Link>
                         ))}
 
-                        {/* Auth links */}
-                        {auth.user ? (
-                            <ProfileDropdown>
-                                <button className="inline-flex items-center">
-                                    {Boolean(auth.user.verified) && (
-                                        <img
-                                            src={verifiedIcon}
-                                            className="w-5 h-5 mr-1"
-                                        />
-                                    )}
-                                    {auth.user.name}
-                                    <ChevronUpDownIcon
-                                        className="w-5 h-5 ml-1 -mr-1"
-                                        aria-hidden="true"
-                                    />
-                                </button>
-                            </ProfileDropdown>
-                        ) : (
-                            <div className="flex items-center space-x-2">
-                                <Link href={route("login")} className="hover:text-primary">
-                                    Login
-                                </Link>
-                                {/* <span className="h-4 w-px bg-neutral-400" aria-hidden="true"></span> */}
-                                <Link href={route("register")} className="hover:text-primary">
-                                    Register
-                                </Link>
-                            </div>
-                        )}
                     </div>
                 </div>
             </div>

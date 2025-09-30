@@ -32,7 +32,7 @@ export default function Blog({ posts, page }) {
                 </>
             ) : (
                 <div className="text-center mt-10">
-                    No se encontraron registros
+                    No Blogs Posted Yet.
                 </div>
             )}
         </LayoutBlog>

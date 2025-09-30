@@ -10,6 +10,7 @@ import CarouselSection from "./CarouselSection";
 import MetaTag from "@/Components/MetaTag";
 import SearchBar from "../../Layouts/Navbar/SearchBar";
 import Reviews from "@/Components/Reviews";
+import { FaMoneyBillWave, FaUserTag, FaTruck, FaHeadset } from "react-icons/fa"
 
 export default function Home({
     page,
@@ -33,56 +34,59 @@ export default function Home({
                     <div className="lg:hidden">
                         <SearchBar />
                     </div>
-                    {/* <SectionList title={"Popular Categories"}> */}
-                    {/* <div className="py-content">
-                        <h2 className="title-section-center mb-6">
-                            Popular Categories
+                    <div className="py-content py-10">
+                        <h2 className="title-section text-center mb-6">
+                            Our Popular Brands
                         </h2>
-                        <CarouselSection
-                            items={categoriesProductCount}
-                            searchType="categories[]"
-                        />
-                    </div> */}
-                    {/* </SectionList> */}
-                    {/* <div className="py-content">
-                        <h2 className="title-section-center mb-8">
-                            Earn More with Referrals!
-                        </h2>
-                        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8">
-                            {bannersTop.map((item, index) => (
-                                <div key={item.id} className="h-full">
-                                    <a href={item.link} target="blank">
-                                        <div
-                                            className={`h-full mx-auto object-cover w-full rounded-xl overflow-hidden shadow-lg flex flex-col justify-between ${
-                                                index % 2 === 0
-                                                    ? "bg-banner1"
-                                                    : "bg-banner2"
-                                            }`}
-                                        >
-                                            <div className="p-4 w-[70%]">
-                                                <h1 className="text-lg font-black">
-                                                    {item.title}
-                                                </h1>
-                                                <h2 className="text-xs text-gray-700">
-                                                    {item.alt}
-                                                </h2>
-                                            </div>
-                                            <img
-                                                src={item.img}
-                                                alt={item.alt}
-                                                className="w-full object-cover"
-                                            />
-                                        </div>
-                                    </a>
-                                </div>
-                            ))}
+
+                        {/* Buttons */}
+                        <div className="flex justify-center space-x-6 my-10">
+                            {/* Active Button */}
+                            <button className="px-8 py-4 rounded-full bg-[#00BBAE] text-white text-lg font-semibold shadow-md hover:bg-[#06A096] transition">
+                                WeMaa Kids Care
+                            </button>
+
+                            {/* Disabled Button */}
+                            <button
+                                className="px-8 py-4 rounded-full bg-gray-300 text-gray-600 text-lg font-semibold shadow-md cursor-not-allowed"
+                                disabled
+                            >
+                                WeMaa Corporation
+                            </button>
                         </div>
-                    </div> */}
-                    {/* {bannersMedium.length > 0 && (
-                        <div className="py-content ">
-                            <Banner image={bannersMedium[0]} />
+
+                        {/* Info Cards */}
+                        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-8 py-5">
+                            {/* Card 1 */}
+                            <div className="flex flex-col items-center text-center bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition transform hover:-translate-y-1">
+                                <FaMoneyBillWave className="text-4xl text-[#00BBAE] mb-4" />
+                                <h3 className="font-semibold text-lg">Money Return</h3>
+                                <p className="text-gray-600">Back guarantee under 7 days.</p>
+                            </div>
+
+                            {/* Card 2 */}
+                            <div className="flex flex-col items-center text-center bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition transform hover:-translate-y-1">
+                                <FaUserTag className="text-4xl text-[#00BBAE] mb-4" />
+                                <h3 className="font-semibold text-lg">Member Discount</h3>
+                                <p className="text-gray-600">On every order over $2000</p>
+                            </div>
+
+                            {/* Card 3 */}
+                            <div className="flex flex-col items-center text-center bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition transform hover:-translate-y-1">
+                                <FaTruck className="text-4xl text-[#00BBAE] mb-4" />
+                                <h3 className="font-semibold text-lg">Home Delivery</h3>
+                                <p className="text-gray-600">Free delivery to your home</p>
+                            </div>
+
+                            {/* Card 4 */}
+                            <div className="flex flex-col items-center text-center bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition transform hover:-translate-y-1">
+                                <FaHeadset className="text-4xl text-[#00BBAE] mb-4" />
+                                <h3 className="font-semibold text-lg">24/7 Support</h3>
+                                <p className="text-gray-600">Dedicated support in 24hrs</p>
+                            </div>
                         </div>
-                    )} */}
+                    </div>
+                    
                     {productsBestSeller.length > 0 && (
                         <SectionList title="Trending Toys">
                             <GridProduct>
@@ -95,20 +99,6 @@ export default function Home({
                             </GridProduct>
                         </SectionList>
                     )}
-                    {/* <div className="py-content">
-                        <h2 className="title-section text-center mb-6">
-                            Shop by Category
-                        </h2>
-                        <CarouselSection
-                            items={categoriesProductCount}
-                            searchType="categories[]"
-                        />
-                    </div> */}
-                    {/* <div className="py-content">
-                        <h2 className="title-section text-center mb-6">
-                            Shop by Age 
-                        </h2>
-                    </div> */}
                     <SectionList title={"Special Items"}>
                         <div className="py-2 relative">
                             <GridProduct>
@@ -122,16 +112,6 @@ export default function Home({
                             </GridProduct>
                         </div>
                     </SectionList>
-                    {/* <div className="py-content">
-                        <h2 className="title-section text-center mb-6">
-                            Latest News
-                        </h2>
-                    </div> */}
-                    {/* {bannersBottom.length > 0 && (
-                        <div className="py-content">
-                            <CarouselBanner images={bannersBottom} />
-                        </div>
-                    )} */}
                     {reviews.length > 0 && <Reviews reviews={reviews} />}
                 </div>
             </Layout>

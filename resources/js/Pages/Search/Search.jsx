@@ -87,7 +87,7 @@ export default function Search({
                                 {products.data.length ? (
                                     <div className="relative">
                                         <>
-                                            <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 md:gap-x-6 md:gap-y-6 ">
+                                            <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 2xl:grid-cols-5 md:gap-x-6 md:gap-y-6 ">
                                                 {products.data.map((item) => (
                                                     <CardProduct
                                                         key={item.id}

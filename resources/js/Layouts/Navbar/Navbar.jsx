@@ -11,6 +11,10 @@ export default function Navbar({ auth }) {
         //     href: "offers",
         // },
         {
+            name: "Home",
+            href: "home",
+        },
+        {
             name: "Products",
             href: "search",
         },
@@ -19,7 +23,11 @@ export default function Navbar({ auth }) {
             href: "blog",
         },
         {
-            name: "Contact",
+            name: "About",
+            href: "about.us",
+        },
+        {
+            name: "Contact Us",
             href: "contact",
         },
     ];

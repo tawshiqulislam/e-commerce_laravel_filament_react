@@ -18,12 +18,12 @@ export default function SearchBar() {
         <div>
             <form
                 onSubmit={handleSubmit}
-                className="overflow-hidden bg-white flex rounded-lg shadow"
+                className="overflow-hidden flex rounded-lg"
             >
                 <input
                     id="search-main"
                     type="text"
-                    placeholder="Find what you're looking for (e.g., Dolls, Toys, Books)"
+                    placeholder="Find what you're looking for..."
                     name="q"
                     onChange={(e) => setData("q", e.target.value)}
                     className="block w-full border-none focus:border-none ring-0 focus:ring-none focus:ring-0 text-sm"

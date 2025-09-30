@@ -10,16 +10,12 @@ export default function ApplicationLogo({
     const { settings } = usePage().props;
     return (
         <Link className="brand flex items-center" href={route("home")}>
-            {/* <span
-                className={
-                    "flex items-center p-1.5 rounded-full mr-2  " + bgIcon
-                }
-            >
-                <ShoppingCartIcon className={"h-7 w-7 " + colorIcon} />
-            </span> */}
-            <span className={"md:text-xl font-semibold " + textColor}>
-                {settings.company.name}
-            </span>
+            <img
+                src={settings?.company?.logo || "/img/default-logo.jpg"}
+                alt={settings?.company?.name || "Logo"}
+                className="object-contain"
+                style={{ width: "80px", height: "auto" }}
+            />
         </Link>
     );
 }

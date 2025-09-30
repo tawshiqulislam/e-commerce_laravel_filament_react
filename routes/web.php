@@ -21,8 +21,13 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\PosController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Middleware\RolePos;
+use Inertia\Inertia;
 
-Route::get('/sms_response', [OtpController::class, 'test'])->name('test');
+Route::get('/sms', [OtpController::class, 'test'])->name('test');
+
+Route::get('/about-us', function () {
+    return Inertia::render('AboutUs');
+})->name('about.us');
 
 Route::get('/legal/{slug}', [LegalPageController::class, 'show'])->name('legal.show');
 Route::get('/legal/{id}/edit', [LegalPageController::class, 'edit'])->name('legal.edit');

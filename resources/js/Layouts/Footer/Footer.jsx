@@ -94,7 +94,7 @@ const Footer = () => {
             </div> */}
 
             <footer className="pt-content">
-                <div className="border-t bg-[#BAEBFF]">
+                <div className="border-t bg-[#00BBAE] text-neutral-100">
                     <div className="container text-sm ">
                         <div className="py-8 md:py-10 lg:py-12 xl:py-14 grid grid-cols-4 gap-8">
                             {/* <div className="col-span-2 ">
@@ -127,10 +127,10 @@ const Footer = () => {
                             ))}
                             <ItemFooter
                                 title="Subscribe to our newsletter"
-                                className="col-span-2 "
+                                className="col-span-2 text-neutral-100"
                             >
                                 <div className="space-y-4">
-                                    <p className="text-gray-500">
+                                    <p className="text-neutral-100">
                                         Get the best deals and discounts by
                                         subscribing to our newsletter!
                                     </p>
@@ -140,8 +140,8 @@ const Footer = () => {
                         </div>
                     </div>
                     <hr className="border-t-2 border-orange-500 my-1" style={{ backgroundColor: "#ffa600ff" }} />
-                    <div className="py-4 text-xs bg-[#BAEBFF]">
-                        <div className="container flex items-center justify-between text-gray-500 ">
+                    <div className="py-4 text-xs bg-[#00BBAE]">
+                        <div className="container flex items-center justify-between text-neutral-100 ">
                             <p>
                                 © 2025 {settings.company.name}. All rights
                                 reserved.
