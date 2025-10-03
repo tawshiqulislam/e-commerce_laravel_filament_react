@@ -145,6 +145,11 @@
     height: auto !important;
 }
 
+.top-navbar-one {
+    font-size: 12px;
+    margin-top: 3px;
+}
+
 .swiper-button-disabled {
     display: none;
 }

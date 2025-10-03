@@ -26,15 +26,15 @@ export default function SearchBar() {
                     placeholder="Find what you're looking for..."
                     name="q"
                     onChange={(e) => setData("q", e.target.value)}
-                    className="block w-full border-none focus:border-none ring-0 focus:ring-none focus:ring-0 text-sm"
+                    className="block w-full border-none focus:border-none bg-[#6CC8C5] ring-0 focus:ring-none focus:ring-0 text-sm text-white placeholder-white"
                     autoComplete="search"
                     required
                 />
                 <button
                     type="submit"
-                    className="inline-flex items-center px-3 text-sm text-gray-400 hover:text-gray-500"
+                    className="inline-flex w-10 h-9 rounded-full bg-white flex items-center justify-center hover:bg-gray-200 focus:outline-none ml-1 mr-1 sm:bg-gray-100"
                 >
-                    <MagnifyingGlassIcon className="w-6 h-6" />
+                    <MagnifyingGlassIcon className="w-5 h-5 text-gray-600" />
                 </button>
             </form>
         </div>

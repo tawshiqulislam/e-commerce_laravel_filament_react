@@ -16,7 +16,7 @@ const CarouselTop = ({ images }) => {
                     <div className="relative">
                         <a key={item.id} href={item.link} target="_blank">
                             <img
-                                className="w-full max-h-[550px] object-cover object-center"
+                                className="w-full max-h-[550px] object-cover object-center rounded-[10px]"
                                 src={item.img}
                                 alt={item.alt}
                                 title={item.title}

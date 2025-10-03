@@ -23,7 +23,7 @@ export default function FullMenu({ navigation, departments }) {
                         <div>
                             <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-orange-400">
                                 <span className="sr-only">Toggle menu</span>
-                                <span className="text-black font-bold px-2">Select Categories</span>
+                                <span className="text-black px-2 sm:text-white pt-14 sm:pt-0">Categories</span>
                                 {open ? (
                                     <XMarkIcon
                                         className="block h-6 w-6"
@@ -31,9 +31,9 @@ export default function FullMenu({ navigation, departments }) {
                                     />
                                 ) : (
                                     <div className="flex flex-col gap-[2px]">
-                                        <div className="h-[2px] w-4 bg-black rounded"></div>
-                                        <div className="h-[2px] w-3 bg-black rounded"></div>
-                                        <div className="h-[2px] w-2 bg-black rounded"></div>
+                                        <div className="h-[2px] w-4 bg-white rounded"></div>
+                                        <div className="h-[2px] w-3 bg-white rounded"></div>
+                                        <div className="h-[2px] w-2 bg-white rounded"></div>
                                     </div>
                                 )}
                             </Disclosure.Button>

@@ -8,6 +8,10 @@ import SearchBar from "./SearchBar";
 import verifiedIcon from "../../../../public/img/icons/verified.png";
 import { FaLocationDot, FaEnvelope, FaPhone, FaUser } from "react-icons/fa6";
 import { GiBeachBag } from "react-icons/gi";
+import top_1 from "../../../../public/img/header/top_1.png";
+import top_2 from "../../../../public/img/header/top_2.png";
+import top_3 from "../../../../public/img/header/top_3.png";
+import top_4 from "../../../../public/img/header/top_4.png";
 
 export default function DesktopNavbar({ navigation }) {
     const { auth, filters, departments, settings } = usePage().props;
@@ -21,29 +25,42 @@ export default function DesktopNavbar({ navigation }) {
     }
 
     return (
-        <nav className="border-b hidden lg:block bg-[#FFFFFF]">
+        <nav className="border-b hidden lg:block bg-[#F9F8F8]">
             {/* Top info bar */}
-            <div className="bg-[#06A096] text-neutral-100 text-sm py-2">
+            <div className="bg-[#e673ac] text-neutral-100 text-sm py-2">
                 <div className="container flex justify-between items-center">
                     {/* Left: Address + Email */}
                     <div className="flex items-center space-x-4">
                         <span className="flex items-center space-x-1">
-                            <FaLocationDot />
-                            <span>
+                            {/* <FaEnvelope /> */}
+                            <img src={top_1} className="w-6"/>
+                            <span className="top-navbar-one">
+                                {"Get free home delivery (Order More then $300)"}
+                            </span>
+                        </span>
+
+                        <span className="flex items-center space-x-1">
+                            {/* <FaEnvelope /> */}
+                            <img src={top_2} className="w-6"/>
+                            <span className="top-navbar-one">
+                                {settings?.company?.email || "gmail@example.com"}
+                            </span>
+                        </span>
+
+                        <span className="flex items-center space-x-1">
+                            {/* <FaLocationDot /> */}
+                            <img src={top_3} className="w-6"/>
+                            <span className="top-navbar-one">
                                 {settings?.company?.address ||
                                     "123 Example Street, Dhaka"}
                             </span>
                         </span>
-                        <span className="flex items-center space-x-1">
-                            <FaEnvelope />
-                            <span>
-                                {settings?.company?.email || "gmail@example.com"}
-                            </span>
-                        </span>
+                        
                     </div>
 
                     {/* Right: Login + Register */}
                     <div className="flex items-center space-x-4">
+                        <img src={top_4} className="w-6" style={{marginRight: "-12px"}}/>
                         <div>
                             {auth.user ? (
                                 <ProfileDropdown>
@@ -67,7 +84,7 @@ export default function DesktopNavbar({ navigation }) {
                                         Login
                                     </Link>
                                     <span
-                                        className="h-4 w-px bg-neutral-400"
+                                        className="h-4 w-px bg-neutral-400 mx-3"
                                         aria-hidden="true"
                                     ></span>
                                     <Link
@@ -83,7 +100,7 @@ export default function DesktopNavbar({ navigation }) {
                 </div>
             </div>
 
-            <div className="bg-[#00BBAE] text-neutral-100 text-sm">
+            <div className="bg-[#FDFDFD] text-neutral-100 text-sm">
                 <div className="container flex items-center justify-between py-3">
                     {/* Left: Big Logo */}
                     <div className="flex-shrink-0">
@@ -93,7 +110,7 @@ export default function DesktopNavbar({ navigation }) {
                     {/* Middle: Category + Search capsule */}
                     <div className="flex flex-1 justify-center space-x-4">
                         {/* Capsule: Category + Search */}
-                        <div className="flex items-center bg-white rounded-full shadow-md w-full max-w-2xl relative">
+                        <div className="flex items-center bg-[#6CC8C5] rounded-full shadow-md w-full max-w-2xl relative">
                             {/* Category dropdown */}
                             <div className="flex-shrink-0 px-4 text-black border-r border-gray-300">
                                 <FullMenu departments={departments} />
@@ -104,22 +121,23 @@ export default function DesktopNavbar({ navigation }) {
                             </div>
                         </div>
 
-                        {/* Capsule: Phone Call */}
-                        <div className="flex items-center space-x-2 bg-white rounded-full shadow-md px-5 py-2 text-black hover:bg-orange-400">
-                            <div className="col">
-                                <FaPhone className="text-xl"/>
-                            </div>
-                            <div className="col">
-                                <div className="text-xs">24/7 Support</div> 
-                                <a href={`tel:${settings?.phone || "+8801973200783"}`} className="font-semibold">
-                                    {settings?.phone || "(+88) 0197-3200783"}
-                                </a>
-                            </div>
-                        </div>
+                        
                     </div>
 
+                    {/* Capsule: Phone Call */}
+                    <div className="flex items-center space-x-2 bg-yellow-400 rounded-full shadow-md px-5 py-2 text-black hover:bg-orange-400">
+                        <div className="col">
+                            <FaPhone className="text-xl"/>
+                        </div>
+                        <div className="col">
+                            <div className="text-xs">24/7 Support</div> 
+                            <a href={`tel:${settings?.phone || "+8801973200783"}`} className="font-semibold">
+                                {settings?.phone || "(+88) 0197-3200783"}
+                            </a>
+                        </div>
+                    </div>
                     {/* Right: Cart */}
-                    <div className="flex-shrink-0">
+                    {/* <div className="flex-shrink-0">
                         <a
                             className="text-4xl hover:text-orange-400"
                             href="/shopping-cart"
@@ -127,16 +145,16 @@ export default function DesktopNavbar({ navigation }) {
                         >
                             <GiBeachBag />
                         </a>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
             <div className="container text-neutral-700 text-lg py-4">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between px-12">
                     {/* Left side: Menu + Logo */}
 
                     {/* Right side: Navigation + Auth */}
-                    <div className="flex items-center space-x-4">
+                    <div className="flex items-center space-x-10">
                         {/* Extra navigation links */}
                         {navigation.map((item, key) => (
                             <Link

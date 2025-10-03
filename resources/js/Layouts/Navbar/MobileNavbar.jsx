@@ -51,18 +51,12 @@ export default function DesktopNavbar({ navigation }) {
                                 </button>
                             </ProfileDropdown>
                         ) : (
-                            <div className="flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-2">
-                                <Link href={route("login")} className="hover:">
+                            <div className="flex lg:flex-1 lg:items-center lg:justify-end">
+                                <Link href={route("login")} className="hover:text-orange-500">
                                     Login
                                 </Link>
-                                <span
-                                    className="h-4 w-px bg-neutral-400"
-                                    aria-hidden="true"
-                                ></span>
-                                <Link
-                                    href={route("register")}
-                                    className="hover:"
-                                >
+                                <span className="h-4 w-px bg-neutral-400 mx-2" aria-hidden="true"></span>
+                                <Link href={route("register")} className="hover:text-orange-500">
                                     Register
                                 </Link>
                             </div>
